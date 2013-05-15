@@ -52,7 +52,11 @@ public:
 				numberChecked = true;
 				i++;
 			}else if(s[i] == ' ')
-				return i;
+			{
+				if(numberChecked == false)
+				return -1;
+				else return i;
+			}
 			else
 				return -1;
 		}

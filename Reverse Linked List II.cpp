@@ -14,28 +14,28 @@ public:
         if(m == n)
             return head;
         
-        ListNode *Nnode = head;
+        ListNode *Mnode = head;
         ListNode *prevNode = NULL;
         if(m == 1)
         {
-            prevNode == NULL;
+            prevNode = NULL;
         }else
         {
-            for(int i=1; i<n-1; i++)
-                Nnode = Nnode->next;
-            prevNode = Nnode;
-            Nnode = Nnode->next;
+            for(int i=1; i<m-1; i++)
+                Mnode = Mnode->next;
+            prevNode = Mnode;
+            Mnode = Mnode->next;
         }
         
-        ListNode *Mnode = head;
+        ListNode *Nnode = head;
         ListNode *nextNode = NULL;
-        for(int i=1; i<=m-1; i++)
-            Mnode = Mnode->next;
-        nextNode = Mnode->next;
+        for(int i=1; i<=n-1; i++)
+            Nnode = Nnode->next;
+        nextNode = Nnode->next;
         
-        ListNode *tempNode = Nnode;
+        ListNode *tempNode = Mnode;
         ListNode *tempPrev = nextNode;
-        ListNode *tempNext = Nnode->next;
+        ListNode *tempNext = Mnode->next;
         for(int i=0; i<n-m; i++)
         {
             ListNode *temp = tempNext->next;
